@@ -3,15 +3,32 @@ debug: true
 server:
   port: 8080
 
+# Configuration for Domino Authorization server
+#security:
+#  oauth2:
+#    client:
+#      clientId: aa469a5c-edb8-4910-94b9-80f2501cc0c8
+#      clientSecret: vr3i6ifd8u6oe29jt10513uhj8
+#      userAuthorizationUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/authorize
+#      accessTokenUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/token
+#      useCurrentUri: false
+#      preEstablishedRedirectUri: http://localhost:8080/login
+#      scope: openid profile email
+#    resource:
+#      tokenInfoUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/checkToken
+
+# Configuration for Google Cloud
 security:
   oauth2:
     client:
-      clientId: aa469a5c-edb8-4910-94b9-80f2501cc0c8
-      clientSecret: vr3i6ifd8u6oe29jt10513uhj8
-      userAuthorizationUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/authorize
-      accessTokenUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/token
+      clientId: 644193210547-to3os0g1cvr6kpsfr4prckd37qh6bnj8.apps.googleusercontent.com
+      clientSecret: rDTkgPZXB1kFVIJUYCWKKmjz
+      userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+      accessTokenUri: https://www.googleapis.com/oauth2/v4/token
       useCurrentUri: false
       preEstablishedRedirectUri: http://localhost:8080/login
       scope: openid profile email
+      clientAuthenticationScheme: form
     resource:
-      tokenInfoUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/checkToken
+      tokenInfoUri: https://www.googleapis.com/oauth2/v3/tokeninfo
+      param: access_token
