@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
+  <script src="app/ngOauth2AuthCodeFlow.js"></script>
+  <script src="app/app.js"></script>
+</head>
+<body ng-controller="SampleController as ctrl">
+  <div ng-show="ctrl.message != null">{{ctrl.message}}</div>
+  <div ng-show="ctrl.reconnectUrl != null">
+    <a ng-href="{{ctrl.reconnectUrl}}">Click here to reconnect</a>
+  </div>
+  <hr/>
+  <div ng-show="ctrl.accessToken != null">
+    <div>Access Token</div>
+    <div>{{ctrl.accessToken}}</div>
+  </div>
+  <hr/>
+
+  <div ng-show="ctrl.jsonResponse != null">
+    <div>Json Response</div>
+    <div>{{ctrl.jsonResponse}}</div>
+  </div>
+  <hr/>
+
+  <div>
+    <div>URL of a resource (rest service waiting for the access token in a Authorization: Bearer http header) : </div>
+    <div>
+    	<input type="text" ng-model="ctrl.resUrl" style="width:500px">
+    </div>
+  </div>
+  <button ng-click="ctrl.callRestApi()">
+    Call protected Rest API
+  </button>
+</body>
+</html>

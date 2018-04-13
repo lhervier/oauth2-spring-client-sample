@@ -1,0 +1,17 @@
+debug: true
+
+server:
+  port: 8080
+
+security:
+  oauth2:
+    client:
+      clientId: aa469a5c-edb8-4910-94b9-80f2501cc0c8
+      clientSecret: vr3i6ifd8u6oe29jt10513uhj8
+      userAuthorizationUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/authorize
+      accessTokenUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/token
+      useCurrentUri: false
+      preEstablishedRedirectUri: http://localhost:8080/login
+      scope: openid profile email
+    resource:
+      tokenInfoUri: http://auth.privatenetwork.net/oauth2.nsf/oauth2-server/checkToken
